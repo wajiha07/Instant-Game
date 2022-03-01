@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Play Video </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./style2.css"> -->
+
+<body>
+    
+<div class="mygame">
+    <div id="game_screen">
+        <video id="myVideo" width="340px" height="476" muted=”muted”>
+            <source src="video.mp4" type="video/mp4" controls>
+            <div id="game_screen"></div> 
+        </video>  
+
+        <img src="hand-bend.png" alt="" id="icon1" style="font-size:20px; " ></img>
+        <img src="hand-bend.png" alt="" id="icon2" style="font-size:20px; " ></img>
+        <img src="hand-bend.png" alt="" id="icon3" style="font-size:20px; " ></img>
+        <!-- <div id="play_btn"><input type="button" value="Click me" ></div> -->
+    </div>
+        <audio id="my_audio" controls>
+            <source src="Lup.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="my_audio1" controls>
+            <source src="win.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="form-popup" id="myForm">
+            <form  class="form-container">        
+          
+             <img src =v2.png width="180px" height="250px" class="image">
+              <button type="submit" class="btn bounce-5" >Play Now</button>
+              <button type="button" class="btn cancel bounce-5" >Download</button>
+            </form>
+          </div>
+
+</div>
+</head>
+<style>
+    #my_audio{
+        display: none; }
+    #my_audio1{
+        display: none;
+        }
+    .mygame{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        background-color:antiquewhite;
+        height:100vh
+       }
+    #game_screen{
+        height:500px;
+        width:300px; 
+        padding-top: 40px; 
+        border-radius: 15px; 
+        /* border: 2px solid rgb(89, 88, 99); */
+        
+    }
+
+    /* #myVideo{   
+        border: 2px solid slateblue;
+        padding-top: 25px; 
+        border-radius: 25px;
+        padding-bottom:  25px;  
+    
+    } */
+    
+    #play_btn{
+        height: 50px;
+        width: 50px;
+        display: none;            
+    }
+    
+    #icon1{  
+        position: relative;
+        animation-name: icon1_;
+        animation-duration: 1s;
+        animation-iteration-count: 20;
+        height: 60px;
+        width: 60px;    
+    }    
+    @keyframes icon1_ {
+        0%  {left:180px; top:-170px; opacity:0; }
+        100% {left:180px; top:-170px; opacity:1; height:40px; width: 40px;}
+    }
+    
+    
+    #icon2{
+        position: relative;
+        animation-name: icon2_;
+        animation-duration: 1s;
+        animation-iteration-count: 20;
+        height: 60px;
+        width: 60px;
+        display: none;
+    }
+    @keyframes icon2_ {
+        0%   {   left:260px; top:-220px;opacity:0;}
+        100%  {left:260px; top:-220px;opacity:1; height:40px; width: 40px;}
+    }
+    
+    #icon3{
+        position: relative;
+        animation-name: icon3_;
+        animation-duration: 1s;
+        animation-iteration-count: 20;
+        height: 60px;
+        width: 60px;
+        display: none;
+        
+    }
+    
+    @keyframes icon3_ {
+        0%   {left:170px; top:-220px;opacity:0;}
+        100%  {left:170px; top:-220px;opacity:1;height:40px; width: 40px;}
+    }
+
+.form-popup {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items:center;
+  height:500px;
+  width:300px; 
+  /* background: rgba(167, 143, 143, 0.5); */
+
+}
+
+.form-container {
+  position:fixed;
+  justify-content: center;
+  align-items:center;
+  width:300px;
+  height:430px;
+  background:transparent; 
+  padding-top: 40px;
+  padding:30px; 
+  
+}
+
+.image {
+
+  width: 75%;
+  height:45%;
+  margin:30px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 5px 5px rgb(62, 67, 75);
+  
+
+}
+
+
+.form-container .btn {
+  background-color: #e94022;
+  color: white;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  left:20px;
+  width: 60%;
+  margin-bottom:10px;
+  margin-left:50px;
+  opacity: 0.8;
+  border-radius: 20px;
+  animation-name: bounce-5;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: 20;
+}
+
+
+@keyframes bounce-5 {
+            0%   { transform: scale(0.8) }
+            100% {transform: scale(1.1) }
+        }
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: rgb(68, 65, 211);
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+</style>
+
+<script src="./app.js"></script>
+    
+</body>
+</html>
